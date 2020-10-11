@@ -1,5 +1,5 @@
 #include "rpEntity.hpp"
-#include "rpUnreachableException.hpp"
+#include "tfUnreachableException.hpp"
 #include <ncurses.h>
 
 rp::Entity::Entity(const Vec2& position, const Character character, const ColorPair& color) :
@@ -24,8 +24,18 @@ void rp::Entity::move(const Direction direction)
 	case Direction::Left:  --m_position.x; break;
 	case Direction::Right: ++m_position.x; break;
 	default:
-		throw UnreachableException("Invalid direction");
+		throw tf::UnreachableException("Invalid direction");
 	}
+}
+
+void rp::Entity::setCharacter(const Character character)
+{
+	m_character = characterToNcursesCharacter(character);
+}
+
+void rp::Entity::setColor(const ColorPair& color)
+{
+	m_color = color;
 }
 
 int rp::Entity::characterToNcursesCharacter(const Character character)
@@ -33,7 +43,9 @@ int rp::Entity::characterToNcursesCharacter(const Character character)
 	switch (character)
 	{
 	case Character::Diamond: return ACS_DIAMOND;
+	case Character::Dot:     return ACS_BULLET;
+	case Character::Circle:  return 'o';
 	default:
-		throw UnreachableException("Invalid character");
+		throw tf::UnreachableException("Invalid character");
 	}
 }

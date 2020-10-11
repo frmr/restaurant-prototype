@@ -1,12 +1,12 @@
 #include "rpApp.hpp"
 #include "rpColorPair.hpp"
-#include "rpExternalLibraryException.hpp"
 #include "rpVec2.hpp"
 #include "rpEntity.hpp"
 #include "rpPlayer.hpp"
 #include "rpBufferedInput.hpp"
 #include "rpSimulation.hpp"
 #include "tfTimer.hpp"
+#include "tfExternalLibraryException.hpp"
 #include <iostream>
 #include <thread>
 #include <chrono>
@@ -38,7 +38,7 @@ void rp::App::loop()
 		erase();
 
 		simulation.draw(Vec2(0, 0));
-		inputs.update(m_window);
+		inputs.update();
 		simulation.update(inputs.popInputs());
 		
 
@@ -64,7 +64,7 @@ void rp::App::prepareWindow()
 
 	if (!has_colors())
 	{
-		throw ExternalLibraryException("Terminal must support colors");
+		throw tf::ExternalLibraryException("Terminal must support colors");
 	}
 
 	cbreak();

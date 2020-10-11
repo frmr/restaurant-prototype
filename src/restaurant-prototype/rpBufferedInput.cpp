@@ -23,22 +23,12 @@ rp::Inputs rp::BufferedInput::popInputs()
 
 #include <stdlib.h>
 
-void rp::BufferedInput::update(WINDOW* const window)
+void rp::BufferedInput::update()
 {
 	int ch;
 
-	WINDOW* bunk = initscr();
-
-	char str[80];
-
-	//exit(1);
-
 	while ((ch = getch()) != ERR)
-	//while (false)
 	{
-		//exit(ch);
-
-
 		switch (ch)
 		{
 		case KEY_UP:    ++m_up;    break;

@@ -1,7 +1,12 @@
 #include "rpColorPair.hpp"
-#include "rpExternalLibraryException.hpp"
+#include "tfExternalLibraryException.hpp"
 #include <ncurses.h>
 #include <iostream>
+
+rp::ColorPair rp::ColorPair::red(   Color::Red,    Color::Black);
+rp::ColorPair rp::ColorPair::blue(  Color::Blue,   Color::Black);
+rp::ColorPair rp::ColorPair::yellow(Color::Yellow, Color::Black);
+rp::ColorPair rp::ColorPair::green( Color::Green,  Color::Black);
 
 rp::ColorPair::ColorPair(const Color foreground, const Color background) :
 	m_handle(generateHandle(foreground, background))
@@ -26,7 +31,7 @@ int rp::ColorPair::generateHandle(const Color foreground, const Color background
 
 	if (error)
 	{
-		throw ExternalLibraryException(tf::String("ncurses init_pair failed with error code {}. Foreground is {}, background is {}", { std::to_string(error), std::to_string(colorToNcursesColor(foreground)), std::to_string(colorToNcursesColor(background)) }));
+		throw tf::ExternalLibraryException(tf::String("ncurses init_pair failed with error code {}. Foreground is {}, background is {}", { std::to_string(error), std::to_string(colorToNcursesColor(foreground)), std::to_string(colorToNcursesColor(background)) }));
 	}
 
 	return handle;

@@ -19,15 +19,15 @@ int main()
 	try
 	{
 		app.loop();
-
-		std::cout << "After loop" << std::endl;
 	}
 	catch (const std::exception& e)
 	{
+		app.cleanup();
 		std::cout << tf::String("Caught exception: {}", { e.what() }) << std::endl;
 	}
 	catch (...)
 	{
+		app.cleanup();
 		std::cout << "Caught unknown exception" << std::endl;
 	}
 

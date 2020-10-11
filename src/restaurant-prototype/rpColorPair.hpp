@@ -7,16 +7,21 @@ namespace rp
 	class ColorPair
 	{
 	public:
-		           ColorPair(const Color foreground, const Color background);
+		                 ColorPair(const Color foreground, const Color background);
 
-		void       use() const;
-		void       setGlobally() const;
+		void             use() const;
+		void             setGlobally() const;
+
+		static ColorPair red;
+		static ColorPair blue;
+		static ColorPair yellow;
+		static ColorPair green;
 
 	private:
-		static int generateHandle(const Color foreground, const Color background);
-		static int colorToNcursesColor(const Color color);
+		static int       generateHandle(const Color foreground, const Color background);
+		static int       colorToNcursesColor(const Color color);
 
 	private:
-		const int  m_handle;
+		int              m_handle;
 	};
 }

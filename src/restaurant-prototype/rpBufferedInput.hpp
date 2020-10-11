@@ -11,7 +11,7 @@ namespace rp
 		       BufferedInput();
 
 		Inputs popInputs();
-		void   update(WINDOW* const window);
+		void   update();
 
 	private:
 		int    m_up;

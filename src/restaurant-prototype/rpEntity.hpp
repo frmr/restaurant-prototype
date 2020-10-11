@@ -18,6 +18,8 @@ namespace rp
 
 	protected:
 		void       move(const Direction direction);
+		void       setCharacter(const Character character);
+		void       setColor(const ColorPair& color);
 
 	private:
 		static int characterToNcursesCharacter(const Character character);

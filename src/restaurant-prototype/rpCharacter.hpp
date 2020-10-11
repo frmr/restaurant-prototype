@@ -4,6 +4,8 @@ namespace rp
 {
 	enum class Character
 	{
-		Diamond
+		Diamond,
+		Dot,
+		Circle
 	};
 }

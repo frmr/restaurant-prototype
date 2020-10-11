@@ -30,6 +30,9 @@ set(RP_SOURCES
 	src/restaurant-prototype/rpSimulation.cpp
 	src/restaurant-prototype/rpInputs.cpp
 	src/restaurant-prototype/rpBufferedInput.cpp
+	src/restaurant-prototype/rpCustomerQueue.cpp
+	src/restaurant-prototype/rpCustomer.cpp
+	src/restaurant-prototype/rpSeat.cpp
 )
 
 add_executable(restaurant-prototype
