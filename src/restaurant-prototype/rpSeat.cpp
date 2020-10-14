@@ -4,7 +4,7 @@
 #include <stdexcept>
 
 rp::Seat::Seat(const Vec2& position, Simulation& simulation) :
-	Entity(position, Character::Dot, ColorPair(Color::White, Color::Black)),
+	Entity(position, Character::Dot, ColorPair::white),
 	m_simulation(simulation)
 {
 }

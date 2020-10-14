@@ -3,6 +3,7 @@
 #include <ncurses.h>
 #include <iostream>
 
+rp::ColorPair rp::ColorPair::white( Color::White,  Color::Black);
 rp::ColorPair rp::ColorPair::red(   Color::Red,    Color::Black);
 rp::ColorPair rp::ColorPair::blue(  Color::Blue,   Color::Black);
 rp::ColorPair rp::ColorPair::yellow(Color::Yellow, Color::Black);

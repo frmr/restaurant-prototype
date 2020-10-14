@@ -1,7 +1,7 @@
 #include "rpPlayer.hpp"
 
 rp::Player::Player(const Vec2& position) :
-	Entity(position, Character::Diamond, ColorPair(Color::White, Color::Black))
+	Entity(position, Character::Diamond, ColorPair::white)
 {
 }
 

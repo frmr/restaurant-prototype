@@ -1,5 +1,4 @@
 #include "rpApp.hpp"
-#include "rpColorPair.hpp"
 #include "rpVec2.hpp"
 #include "rpEntity.hpp"
 #include "rpPlayer.hpp"
