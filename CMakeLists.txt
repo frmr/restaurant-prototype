@@ -33,6 +33,7 @@ set(RP_SOURCES
 	src/restaurant-prototype/rpCustomerQueue.cpp
 	src/restaurant-prototype/rpCustomer.cpp
 	src/restaurant-prototype/rpSeat.cpp
+	src/restaurant-prototype/rpTable.cpp
 )
 
 add_executable(restaurant-prototype
