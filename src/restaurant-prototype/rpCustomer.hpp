@@ -15,6 +15,8 @@ namespace rp
 		void                serve();
 		void                dispatchToSeat(Seat* const seat);
 
+		using Entity::move;
+
 	private:
 		static CustomerType generateRandomType();
 

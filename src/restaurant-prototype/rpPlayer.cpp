@@ -1,7 +1,8 @@
 #include "rpPlayer.hpp"
 
-rp::Player::Player(const Vec2& position) :
-	Entity(position, Character::Diamond, ColorPair::white)
+rp::Player::Player(const Vec2& position, const std::vector<Vec2>& validPositions) :
+	Entity(position, Character::Diamond, ColorPair::white),
+	m_validPositions(validPositions)
 {
 }
 

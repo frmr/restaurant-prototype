@@ -2,7 +2,7 @@
 #include "rpCustomer.hpp"
 
 rp::Simulation::Simulation() :
-	m_player(Vec2(4, 7))
+	m_player(Vec2(4, 7), getValidPlayerPositions())
 {
 	for (const Vec2& position : getTablePositions())
 	{
@@ -13,6 +13,7 @@ rp::Simulation::Simulation() :
 void rp::Simulation::draw(const Vec2& offset) const
 {
 	m_player.draw(offset);
+	m_customerQueue.draw(offset);
 
 	for (const Table& table : m_tables)
 	{
@@ -45,5 +46,20 @@ std::vector<rp::Vec2> rp::Simulation::getTablePositions()
 		Vec2(6, 6),
 		Vec2(6, 7),
 		Vec2(6, 8)
+	};
+}
+
+std::vector<rp::Vec2> rp::Simulation::getValidPlayerPositions()
+{
+	return {
+		Vec2(3, 6),
+		Vec2(4, 6),
+		Vec2(5, 6),
+		Vec2(3, 7),
+		Vec2(4, 7),
+		Vec2(5, 7),
+		Vec2(3, 8),
+		Vec2(4, 8),
+		Vec2(5, 8)
 	};
 }

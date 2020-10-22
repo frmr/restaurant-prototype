@@ -1,6 +1,6 @@
 #pragma once
 
-#include <queue>
+#include <list>
 #include "rpCustomer.hpp"
 
 namespace rp
@@ -8,13 +8,15 @@ namespace rp
 	class CustomerQueue
 	{
 	public:
-		                     CustomerQueue();
-		Customer             pop();
+		                    CustomerQueue();
+		Customer            pop();
+		void                draw(const Vec2& offset) const;
 
 	private:
-		void                 fill();
+		void                shift();
+		void                fill();
 
 	private:
-		std::queue<Customer> m_queue;
+		std::list<Customer> m_queue;
 	};
 }
